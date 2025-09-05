@@ -74,13 +74,6 @@ Each lab (`lab-1` through `lab-4`) includes:
 - Solution files that show the complete implementation
 - Supporting code and configurations
 
-## Prerequisites
-
-- Java 21 (or later)
-- Maven 3.9+ (wrapper included)
-- Docker (for Testcontainers)
-- Your favorite IDE (IntelliJ IDEA, Eclipse, VS Code, Eclipse, NetBeans, etc.)
-
 ## Getting Started
 
 1. Clone this repository:
