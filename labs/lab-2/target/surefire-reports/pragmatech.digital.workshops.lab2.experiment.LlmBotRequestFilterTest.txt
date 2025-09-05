@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: pragmatech.digital.workshops.lab2.experiment.LlmBotRequestFilterTest
--------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 3, Time elapsed: 0.001 s -- in pragmatech.digital.workshops.lab2.experiment.LlmBotRequestFilterTest

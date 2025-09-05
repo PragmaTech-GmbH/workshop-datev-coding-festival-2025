@@ -1,8 +1,0 @@
-/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-1/src/main/java/pragmatech/digital/workshops/lab1/Lab1Application.java
-/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-1/src/main/java/pragmatech/digital/workshops/lab1/domain/Book.java
-/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-1/src/main/java/pragmatech/digital/workshops/lab1/domain/BookStatus.java
-/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-1/src/main/java/pragmatech/digital/workshops/lab1/repository/BookRepository.java
-/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-1/src/main/java/pragmatech/digital/workshops/lab1/service/BookAlreadyExistsException.java
-/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-1/src/main/java/pragmatech/digital/workshops/lab1/service/BookService.java
-/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-1/src/main/java/pragmatech/digital/workshops/lab1/util/DefaultTimeProvider.java
-/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-1/src/main/java/pragmatech/digital/workshops/lab1/util/TimeProvider.java
