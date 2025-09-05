@@ -1,0 +1,3 @@
+- Outlook: JUnit 6
+- Spring Boot 4.0 -> stopping and resuming a test context
+- add Spring Test Profiler
