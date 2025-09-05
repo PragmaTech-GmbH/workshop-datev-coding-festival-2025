@@ -15,16 +15,16 @@ This workshop demystifies testing in Spring Boot applications through hands-on e
 The workshop consists of four lab sessions, each focusing on different aspects of testing Spring Boot applications:
 
 - [Lab 1](labs/lab-1): Introduction to the Workshop & Unit Testing
-- [Lab 2](labs/lab-2): Sliced Testing
-- [Lab 3](labs/lab-3): Integration Testing
-- [Lab 4](labs/lab-4): Pitfalls, Best Practices, and AI
+- [Lab 2](labs/lab-2): Sliced Testing: Working with a minimal Spring TestContext
+- [Lab 3](labs/lab-3): Integration Testing: Testing against a full Spring TestContext
+- [Lab 4](labs/lab-4): Pitfalls, Best Practices, Outlook and AI
 
 Each lab concludes with hands-on tasks that are explained in the subsequent lab session.
 
 Throughout the workshop, you'll learn to effectively use testing frameworks like JUnit 5, Mockito, Testcontainers, and WireMock in Spring Boot applications.
 
 - You'll understand how to structure tests and when different test types provide the most value and confidence.
-- We'll cover best practices for writing integration tests with Spring TestContext, managing test data, and ensuring tests are reliable and maintainable.
+- We'll cover best practices for writing integration tests with the Spring TestContext, optimizing your test suite for fast & reliable results and explore the vast and mature Java testing ecosystem.
 - Finally, we'll discuss common pitfalls and how to avoid them, plus how AI tools can assist in writing and maintaining tests.
 
 The workshop will be held in either English or German, depending on the participants' preferences.
