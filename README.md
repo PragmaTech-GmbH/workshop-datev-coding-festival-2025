@@ -2,7 +2,7 @@
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/PragmaTech-GmbH/workshop-datev-coding-festival-2025)
 
-Welcome to the full-day workshop "Testing Spring Boot Applications Demystified" during the DATEV Coding Festival 2025.
+Welcome to the full-day workshop "Testing Spring Boot Applications Demystified" during the DATEV Coding Festival 2025 at the 09th of October 2025.
 
 This workshop helps developers become more confident and productive when implementing automated tests for Spring Boot applications.
 
@@ -27,11 +27,13 @@ Throughout the workshop, you'll learn to effectively use testing frameworks like
 - We'll cover best practices for writing integration tests with Spring TestContext, managing test data, and ensuring tests are reliable and maintainable.
 - Finally, we'll discuss common pitfalls and how to avoid them, plus how AI tools can assist in writing and maintaining tests.
 
+The workshop will be held in either English or German, depending on the participants' preferences.
+
 ## Workshop Requirements
 
 - Existing knowledge of Java and Spring Boot
 - Familiarity with Maven and basic Java/Spring Boot testing concepts
-- A laptop with Java 21
+- A laptop with Java 21 JDK installed
 - Access to a Docker engine to use Testcontainers for integration tests
 - An IDE of your choice (preferably IntelliJ IDEA)
 - To verify your setup, follow the instructions in [Getting Started](#getting-started)
@@ -39,13 +41,13 @@ Throughout the workshop, you'll learn to effectively use testing frameworks like
 
 ## Workshop Timeline
 
-- 9:99 - 10:45: Lab 1 (105 minutes)
-- 10:45 - 11:05: **Coffee Break**
-- 11:05 - 13:00: Lab 2 (115 minutes)
-- 13:00 - 14:00 **Lunch**
-- 14:00 - 15:30: Lab 3 (90 minutes)
-- 15:30 - 15:50 **Coffee Break**
-- 15:50 - 17:00: Lab 4 (70 minutes)
+- 9:00 - 10:30: Lab 1 (90 minutes)
+- 10:30 - 11:00: **Coffee Break and time for exercises**
+- 11:00 - 12:30: Lab 2 (90 minutes)
+- 12:30 - 13:30 **Lunch**
+- 13:30 - 15:00: Lab 3 (90 minutes)
+- 15:00 - 15:30 **Coffee Break and time for exercises**
+- 15:30 - 17:00: Lab 4 (90 minutes)
 
 ## GitHub Codespaces
 
