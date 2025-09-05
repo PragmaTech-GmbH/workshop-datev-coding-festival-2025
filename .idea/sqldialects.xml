@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/labs/lab-2/src/main/resources/db/migration/V001__create-book-table.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/labs/lab-3/src/main/resources/db/migration/V001__create-book-table.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/labs/lab-3/src/test/resources/init-postgres.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/labs/lab-4/src/main/resources/db/migration/V001__create-book-table.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/labs/lab-4/src/main/resources/db/migration/V002__enrich-book-table.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/labs/lab-4/src/test/resources/init-postgres.sql" dialect="GenericSQL" />
+  </component>
+</project>

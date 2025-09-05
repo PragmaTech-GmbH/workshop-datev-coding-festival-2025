@@ -1,0 +1,11 @@
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-4/src/test/java/pragmatech/digital/workshops/lab4/Lab4ApplicationIT.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-4/src/test/java/pragmatech/digital/workshops/lab4/LocalDevTestcontainerConfig.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-4/src/test/java/pragmatech/digital/workshops/lab4/config/OpenLibraryApiStub.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-4/src/test/java/pragmatech/digital/workshops/lab4/config/PostgresTestcontainer.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-4/src/test/java/pragmatech/digital/workshops/lab4/config/WireMockContextInitializer.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-4/src/test/java/pragmatech/digital/workshops/lab4/experiment/DiscountServiceTest.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-4/src/test/java/pragmatech/digital/workshops/lab4/experiment/JUnit4StyleTest.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-4/src/test/java/pragmatech/digital/workshops/lab4/experiment/JUnit5StyleTest.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-4/src/test/java/pragmatech/digital/workshops/lab4/experiment/MockAnnotationTest.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-4/src/test/java/pragmatech/digital/workshops/lab4/experiment/MockBeanAnnotationTest.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-4/src/test/java/pragmatech/digital/workshops/lab4/experiment/MockitoBeanAnnotationTest.java

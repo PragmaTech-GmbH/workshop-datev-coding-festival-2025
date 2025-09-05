@@ -1,0 +1,5 @@
+book:
+  metadata:
+    api:
+      url: "null"
+      timeout: 5

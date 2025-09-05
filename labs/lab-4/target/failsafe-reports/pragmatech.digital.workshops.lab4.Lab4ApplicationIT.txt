@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: pragmatech.digital.workshops.lab4.Lab4ApplicationIT
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.594 s -- in pragmatech.digital.workshops.lab4.Lab4ApplicationIT

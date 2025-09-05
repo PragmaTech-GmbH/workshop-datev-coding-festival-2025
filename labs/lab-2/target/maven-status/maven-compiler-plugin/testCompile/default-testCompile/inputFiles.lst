@@ -1,0 +1,14 @@
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-2/src/test/java/pragmatech/digital/workshops/lab2/Lab2ApplicationIT.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-2/src/test/java/pragmatech/digital/workshops/lab2/LocalDevTestcontainerConfig.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-2/src/test/java/pragmatech/digital/workshops/lab2/LocalLab2Application.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-2/src/test/java/pragmatech/digital/workshops/lab2/exercises/Exercise1WebMvcTest.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-2/src/test/java/pragmatech/digital/workshops/lab2/exercises/Exercise2DataJpaTest.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-2/src/test/java/pragmatech/digital/workshops/lab2/experiment/BlockBotRequestFilterWebMvcTest.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-2/src/test/java/pragmatech/digital/workshops/lab2/experiment/BookControllerTest.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-2/src/test/java/pragmatech/digital/workshops/lab2/experiment/BookControllerUnitTest.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-2/src/test/java/pragmatech/digital/workshops/lab2/experiment/BookRepositoryInMemoryTest.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-2/src/test/java/pragmatech/digital/workshops/lab2/experiment/BookRepositoryPostgresTest.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-2/src/test/java/pragmatech/digital/workshops/lab2/experiment/BookRepositoryTest.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-2/src/test/java/pragmatech/digital/workshops/lab2/experiment/LlmBotRequestFilterTest.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-2/src/test/java/pragmatech/digital/workshops/lab2/solutions/Solution1WebMvcTest.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-2/src/test/java/pragmatech/digital/workshops/lab2/solutions/Solution2DataJpaTest.java

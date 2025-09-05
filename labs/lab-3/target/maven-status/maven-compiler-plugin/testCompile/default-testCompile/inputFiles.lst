@@ -1,0 +1,16 @@
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-3/src/test/java/pragmatech/digital/workshops/lab3/Lab3ApplicationIT.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-3/src/test/java/pragmatech/digital/workshops/lab3/LocalDevTestcontainerConfig.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-3/src/test/java/pragmatech/digital/workshops/lab3/config/OpenLibraryApiStub.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-3/src/test/java/pragmatech/digital/workshops/lab3/config/PostgresTestcontainer.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-3/src/test/java/pragmatech/digital/workshops/lab3/config/WireMockContextInitializer.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-3/src/test/java/pragmatech/digital/workshops/lab3/exercises/ApplicationFiveIT.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-3/src/test/java/pragmatech/digital/workshops/lab3/exercises/ApplicationFourIT.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-3/src/test/java/pragmatech/digital/workshops/lab3/exercises/ApplicationOneIT.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-3/src/test/java/pragmatech/digital/workshops/lab3/exercises/ApplicationThreeIT.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-3/src/test/java/pragmatech/digital/workshops/lab3/exercises/ApplicationTwoIT.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-3/src/test/java/pragmatech/digital/workshops/lab3/exercises/Exercise1WireMockTest.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-3/src/test/java/pragmatech/digital/workshops/lab3/experiment/MockMvcContextTest.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-3/src/test/java/pragmatech/digital/workshops/lab3/experiment/OpenLibraryApiClientTest.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-3/src/test/java/pragmatech/digital/workshops/lab3/experiment/SampleIT.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-3/src/test/java/pragmatech/digital/workshops/lab3/experiment/WebTestClientContextTest.java
+/Users/rieckpil/Development/git/testing-spring-boot-applications-demystified-workshop/labs/lab-3/src/test/java/pragmatech/digital/workshops/lab3/solutions/Solution1WireMockTest.java
