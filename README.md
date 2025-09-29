@@ -34,7 +34,7 @@ The workshop will be held in either English or German, depending on the particip
 - Existing knowledge of Java and Spring Boot
 - Familiarity with Maven and basic Java/Spring Boot testing concepts
 - A laptop with Java 21 JDK installed
-- Access to a Docker engine to use Testcontainers for integration tests
+- Access to a Docker engine to use Testcontainers for integration tests (consider Podman)
 - An IDE of your choice (preferably IntelliJ IDEA)
 - To verify your setup, follow the instructions in [Getting Started](#getting-started)
 - Alternative option to a local setup: Use [GitHub Codespaces](#github-codespaces), this requires a personal GitHub Account
@@ -53,10 +53,9 @@ The workshop will be held in either English or German, depending on the particip
 
 This repository is configured for use with GitHub Codespaces, which provides a complete, ready-to-use development environment in the cloud. To use GitHub Codespaces:
 
-1. Click on the "Code" button on the GitHub repository
-2. Select the "Codespaces" tab
-3. Click "Create codespace on main" and select at least 4 cores (120 hours are [free per month](https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-codespaces/about-billing-for-github-codespaces))
-4. Wait for the codespace to start and setup to complete
+1. Follow this [link](https://codespaces.new/PragmaTech-GmbH/workshop-datev-coding-festival-2025)
+2. Continue with the default confiugration (`main` branch, region `Europe West`) and select at least 4 cores (120 hours are [free per month](https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-codespaces/about-billing-for-github-codespaces))
+3. Wait for the codespace to start and setup to complete
 
 The codespace includes:
 - Java 21

@@ -3,7 +3,7 @@ marp: true
 theme: pragmatech
 ---
 
-![bg](./assets/barcelona-spring-io.jpg)
+![bg](./assets/nuremberg.jpg)
 
 ---
 
@@ -19,7 +19,7 @@ Question: Who is writing tests manually and who is enjoying it?
 
 ## Full-Day Workshop
 
-_Spring I/O Conference Workshop 21.05.2025_
+_DATEV Coding Festival 09.10.2025_
 
 Philip Riecks - [PragmaTech GmbH](https://pragmatech.digital/) - [@rieckpil](https://x.com/rieckpil)
 
@@ -34,29 +34,28 @@ Philip Riecks - [PragmaTech GmbH](https://pragmatech.digital/) - [@rieckpil](htt
 
 -->
 
-<!-- header: 'Testing Spring Boot Applications Demystified Workshop @ Spring I/O 21.05.2025' -->
+<!-- header: 'Testing Spring Boot Applications Demystified Workshop @ DATEV Coding Festival 09.10.2025' -->
 <!-- footer: '![w:32 h:32](assets/generated/logo.webp)' -->
 
 # Organization
 
-- Hotel WiFi: `Spring I/O` Password: `bootifulBCN`
-- Slides & Code will be shared: check PragmaTech GitHub
+- Slides & code will be shared: check [PragmaTech GitHub](https://github.com/PragmaTech-GmbH/workshop-datev-coding-festival-2025) in the linked resources within Zoom
 - Workshop lab requirements
-  - Java 21
-  - Docker
-  - GitHub Account (preferably a personal)
+  - Java JDK 21
+  - Docker for Testcontainers, consider Podman
+  - GitHub Account (preferably a personal) to use GitHub Codespaces if the local setup is not possible
 
 ---
 
 ### (Planned) Timeline
 
-- 9:00 - 10:45: **Lab 1 - Introduction and Spring Boot Testing Basics**  (105 minutes)
-- 10:45 - 11:05: **Coffee Break** (20 minutes)
-- 11:05 - 13:00: **Lab 2 - Sliced Testing** (115 minutes)
-- 13:00 - 14:00 **Lunch** (60 minutes)
-- 14:00 - 15:30: **Lab 3 - Integration Testing** (90 minutes)
-- 15:30 - 15:50 **Coffee Break** (20 minutes)
-- 15:50 - 17:00: **Lab 4 - Pitfalls, Best Practices, AI & Outlook** (70 minutes)
+- 9:00 - 10:30: **Lab 1 - Introduction and Spring Boot Testing Basics**  (90 minutes)
+- 10:30 - 11:00: **Coffee Break** (30 minutes)
+- 11:00 - 12:30: **Lab 2 - Sliced Testing** (90 minutes)
+- 12:30 - 13:30 **Lunch** (60 minutes)
+- 13:30 - 15:00: **Lab 3 - Integration Testing** (90 minutes)
+- 15:00 - 15:30 **Coffee Break** (30 minutes)
+- 15:30 - 17:00: **Lab 4 - Pitfalls, Best Practices, AI & Outlook** (90 minutes)
 
 ---
 ![bg right:33%](assets/generated/hza.jpg)
@@ -73,11 +72,8 @@ Philip Riecks - [PragmaTech GmbH](https://pragmatech.digital/) - [@rieckpil](htt
 
 ## Getting to Know Each Other
 
-- What's your name?
-- Where are you from?
-- What's your role?
-- How is automated testing handled in your team/company? 
-- Do you have any specific testing challenges? 
+- What's your name and your role?
+- What's one word that describes how you're feeling about automated testing?
 - What's your expectation for this workshop?
 
 ---
@@ -653,9 +649,9 @@ public class TimingExtension implements BeforeTestExecutionCallback, AfterTestEx
 # Time For Some Exercises
 ## Lab 1
 
-- Set up the [repository](https://github.com/PragmaTech-GmbH/testing-spring-boot-applications-demystified-workshop) locally - https://github.com/PragmaTech-GmbH/testing-spring-boot-applications-demystified-workshop
+- Set up the [repository](https://github.com/PragmaTech-GmbH/workshop-datev-coding-festival-2025) locally - https://github.com/PragmaTech-GmbH/workshop-datev-coding-festival-2025
 - Search "PragmaTech GitHub" and pick the first pinned repository
 - Work locally or use GitHub Codespaces (120 hours/month free)
 - Fore Codespaces, pick at least 4-Cores (16 GB RAM) and region `Europe West`
 - Navigate to the `labs/lab-1` folder in the repository and complete the tasks as described in the `README` file of that folder 
-- Time boxed until the end of the coffee break (11:05 AM)
+- Time boxed until the end of the coffee break (11:00 AM)
