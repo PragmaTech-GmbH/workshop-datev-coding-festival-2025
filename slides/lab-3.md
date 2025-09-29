@@ -3,7 +3,7 @@ marp: true
 theme: pragmatech
 ---
 
-![bg](./assets/barcelona-spring-io.jpg)
+![bg](./assets/nuremberg.jpg)
 
 ---
 
@@ -21,7 +21,7 @@ img[alt~="center"] {
 
 ## Full-Day Workshop
 
-_Spring I/O Conference Workshop 21.05.2025_
+_DATEV Coding Festival 09.10.2025_
 
 Philip Riecks - [PragmaTech GmbH](https://pragmatech.digital/) - [@rieckpil](https://x.com/rieckpil)
 
@@ -31,6 +31,8 @@ Philip Riecks - [PragmaTech GmbH](https://pragmatech.digital/) - [@rieckpil](htt
 
 ---
 
+<!-- header: 'Testing Spring Boot Applications Demystified Workshop @ DATEV Coding Festival 09.10.2025' -->
+<!-- footer: '![w:32 h:32](assets/generated/logo.webp)' -->
 
 ![bg left:33%](assets/generated/lab-3.jpg)
 
@@ -223,4 +225,4 @@ Common problems that break caching:
 
 - Work with the same repository as in lab 1/lab 2
 - Navigate to the `labs/lab-3` folder in the repository and complete the tasks as described in the `README` file of that folder
-- Time boxed until the end of the coffee break (15:50 AM)
+- Time boxed until the end of the coffee break (15:30 AM)

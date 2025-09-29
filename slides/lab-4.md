@@ -21,13 +21,13 @@ img[alt~="center"] {
 
 ## Full-Day Workshop
 
-_Spring I/O Conference Workshop 21.05.2025_
+_DATEV Coding Festival 09.10.2025_
 
 Philip Riecks - [PragmaTech GmbH](https://pragmatech.digital/) - [@rieckpil](https://x.com/rieckpil)
 
 --- 
 
-<!-- header: 'Testing Spring Boot Applications Demystified Workshop @ Spring I/O 21.05.2025' -->
+<!-- header: 'Testing Spring Boot Applications Demystified Workshop @ DATEV Coding Festival 09.10.2025' -->
 <!-- footer: '![w:32 h:32](assets/generated/logo.webp)' -->
 
 ![bg left:33%](assets/generated/lab-4.jpg)
@@ -235,7 +235,6 @@ Notes:
 
 - Request your certificate of completion via mail/LinkedIn
 - Share your feedback, e.g. you could share three highlights and three areas for improvement
-- Enjoy the next two days at Spring I/O
 - Joyful testing!
 
 **LinkedIn**: Philip Riecks

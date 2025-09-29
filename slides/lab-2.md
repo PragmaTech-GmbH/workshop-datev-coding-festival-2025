@@ -10,7 +10,7 @@ img[alt~="center"] {
 }
 </style>
 
-![bg](./assets/barcelona-spring-io.jpg)
+![bg](./assets/nuremberg.jpg)
 
 ---
 
@@ -21,14 +21,14 @@ img[alt~="center"] {
 
 ## Full-Day Workshop
 
-_Spring I/O Conference Workshop 21.05.2025_
+_DATEV Coding Festival 09.10.2025_
 
 Philip Riecks - [PragmaTech GmbH](https://pragmatech.digital/) - [@rieckpil](https://x.com/rieckpil)
 
 
 --- 
 
-<!-- header: 'Testing Spring Boot Applications Demystified Workshop @ Spring I/O 21.05.2025' -->
+<!-- header: 'Testing Spring Boot Applications Demystified Workshop @ DATEV Coding Festival 09.10.2025' -->
 <!-- footer: '![w:32 h:32](assets/generated/logo.webp)' -->
 
 ![bg left:33%](assets/generated/lab-2.jpg)
@@ -235,4 +235,4 @@ List<Book> searchBooksByTitleWithRanking(@Param("searchTerms") String searchTerm
 
 - Work with the same repository as in lab 1
 - Navigate to the `labs/lab-2` folder in the repository and complete the tasks as described in the `README` file of that folder
-- Time boxed until the end of the lunch break (14:00 AM)
+- Time boxed until the end of the lunch break (13:30 AM)
