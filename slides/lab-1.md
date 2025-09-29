@@ -230,9 +230,9 @@ Tips:
 -->
 
 ```shell
-[INFO] +- org.springframework.boot:spring-boot-starter-test:jar:3.4.5:test
-[INFO] |  +- org.springframework.boot:spring-boot-test:jar:3.4.5:test
-[INFO] |  +- org.springframework.boot:spring-boot-test-autoconfigure:jar:3.4.5:test
+[INFO] +- org.springframework.boot:spring-boot-starter-test:jar:3.5.6:test
+[INFO] |  +- org.springframework.boot:spring-boot-test:jar:3.5.6:test
+[INFO] |  +- org.springframework.boot:spring-boot-test-autoconfigure:jar:3.5.6:test
 [INFO] |  +- com.jayway.jsonpath:json-path:jar:2.9.0:test
 [INFO] |  +- jakarta.xml.bind:jakarta.xml.bind-api:jar:4.0.2:test
 [INFO] |  |  \- jakarta.activation:jakarta.activation-api:jar:2.1.3:test
