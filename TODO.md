@@ -1,7 +1,8 @@
 # Open Points
 
 - [ ] Get internal documentation for Podman installation
-- [ ] Update Code
+- [X] Update Code
+- [ ] Update the resource links in Zoom
 
 ## Content
 
@@ -11,6 +12,7 @@
 - [ ] Four general types of tests: Unit, Sliced, Integration, End-to-End
 - [ ] Add a section about Spring Test Profiler
 - [ ] Generate the final slides and link them in the readme
+- [ ] Better images for explaining how slicing works
 
 ## Introduction
 
