@@ -110,7 +110,7 @@ Notes:
 
 ---
 
-<!-- header: 'Testing Spring Boot Applications Demystified Workshop @ Spring I/O 21.05.2025' -->
+<!-- header: 'Testing Spring Boot Applications Demystified Workshop @ DATEV Coding Festival 09.10.2025' -->
 <!-- footer: '![w:32 h:32](assets/generated/logo.webp)' -->
 
 <!--
@@ -146,6 +146,20 @@ Notes:
 
 ---
 
+![bg left:33%](assets/generated/northstar.jpg)
+
+## My Overall Northstar
+
+Imagine seeing this pull request on a Friday afternoon:
+
+![](assets/generated/northstar-pr.png)
+
+How confident are you to merge this major Spring Boot upgrade and deploy it to production once the pipeline turns green?
+
+Good tests don't just catch bugs - they give you the confidence to say "yes" without hesitation.
+
+---
+
 ## Why Do We Test Software
 
 - Shift Left
@@ -154,6 +168,7 @@ Notes:
 - Documentation
 - Regression Prevention
 - Become more Productive
+- Use Tests as a Playground to Explore New Technologies
 
 ---
 
@@ -172,8 +187,16 @@ img[alt~="center"] {
 
 ### My Pragmatic Test Name Approach
 
+<br/>
+
 1. **Unit Tests**: Tests that verify the functionality of a single, isolated component (like a method or class) by mocking or stubbing all external dependencies.
+
+<br/>
+
 2. **Integration Tests**: Tests that verify interactions between two or more components work correctly together, with real implementations replacing some mocks.
+
+<br/>
+
 3. **E2E**: Tests that validate the entire application workflow from start to finish, simulating real user scenarios across all components and external dependencies.
 
 ---
@@ -650,8 +673,7 @@ public class TimingExtension implements BeforeTestExecutionCallback, AfterTestEx
 ## Lab 1
 
 - Set up the [repository](https://github.com/PragmaTech-GmbH/workshop-datev-coding-festival-2025) locally - https://github.com/PragmaTech-GmbH/workshop-datev-coding-festival-2025
-- Search "PragmaTech GitHub" and pick the first pinned repository
-- Work locally or use GitHub Codespaces (120 hours/month free)
-- Fore Codespaces, pick at least 4-Cores (16 GB RAM) and region `Europe West`
+- Work locally (requires Podman and Java 21) or use GitHub Codespaces (120 hours/month free)
+- For Codespaces, pick at least 4-Cores (16 GB RAM) and region `Europe West`
 - Navigate to the `labs/lab-1` folder in the repository and complete the tasks as described in the `README` file of that folder 
 - Time boxed until the end of the coffee break (11:00 AM)
