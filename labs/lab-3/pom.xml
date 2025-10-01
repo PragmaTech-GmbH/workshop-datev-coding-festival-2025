@@ -85,6 +85,12 @@
       <version>${wiremock.version}</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>digital.pragmatech.testing</groupId>
+      <artifactId>spring-test-profiler</artifactId>
+      <version>0.0.12</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
