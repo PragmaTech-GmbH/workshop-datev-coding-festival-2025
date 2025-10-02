@@ -85,6 +85,15 @@ Each new Spring Boot project comes with a default integration test:
 
 ---
 
+## Main Challenges of Full Context Integration Tests
+
+- Starting the entire Spring context can be slow, repeated context starts will slow down the build
+- External infrastructure components (databases, message brokers, etc.) need to be provided
+- HTTP communication with other services needs to be stubbed both during startup and during runtime
+- Test data management (setup and cleanup) is crucial to ensure test reliability
+
+---
+
 ## Starting the Entire Context
 
 - Provide external infrastructure with [Testcontainers](https://testcontainers.com/)
@@ -95,6 +104,8 @@ Each new Spring Boot project comes with a default integration test:
 ---
 
 ## Introducing: Microservice HTTP Communication
+
+Our library application got a new feature. We now fetch book metadata from a remote service:
 
 ```java
 public BookMetadataResponse getBookByIsbn(String isbn) {
@@ -143,7 +154,9 @@ wireMockServer.stubFor(
 
 ## Making Our Application Context Start
 
-- Stubbing HTTP responses during the launch of our Spring Context
+Next challenge: Our application makes HTTP calls during startup to fetch some initial data.
+
+- We need to stub HTTP responses during the launch of our Spring Context
 - Introducing a new concept: `ContextInitializer`
 
 ```java
@@ -211,6 +224,12 @@ This goes into the cache key (`MergedContextConfiguration`):
 ## Investigate the Logs
 
 ![](assets/context-caching-logs.png)
+
+---
+
+## Spring Test Profiler
+
+TODO
 
 ---
 

@@ -15,13 +15,13 @@ Lab 1:
 
 Lab 2:
 
-- [ ] Four general types of tests: Unit, Sliced, Integration, End-to-End
-- [ ] Better images for explaining how slicing works
+- [X] Four general types of tests: Unit, Sliced, Integration, End-to-End
+- [X] Better images for explaining how slicing works
 
 Lab 3:
 
-- [ ] Add a slide to showcase what to write integration tests for
-- [ ] Add a slide for challenges of full context integration tests: infrastructure components, HTTP communication, startup, duration
+- [X] Add a slide to showcase what to write integration tests for
+- [X] Add a slide for challenges of full context integration tests: infrastructure components, HTTP communication, startup, duration
 - [ ] Add a section about Spring Test Profiler
 
 Lab 4:
