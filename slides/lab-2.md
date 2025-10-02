@@ -26,20 +26,21 @@ _DATEV Coding Festival 09.10.2025_
 Philip Riecks - [PragmaTech GmbH](https://pragmatech.digital/) - [@rieckpil](https://x.com/rieckpil)
 
 
---- 
+---
 
 <!-- header: 'Testing Spring Boot Applications Demystified Workshop @ DATEV Coding Festival 09.10.2025' -->
 <!-- footer: '![w:32 h:32](assets/generated/logo.webp)' -->
+
+## Discuss Exercises from Lab 1
+
+---
+
 
 ![bg left:33%](assets/generated/lab-2.jpg)
 
 # Lab 2
 
 ## Sliced Testing
-
----
-
-## Discuss Exercises from Lab 1
 
 ---
 
@@ -82,9 +83,30 @@ class BookControllerUnitTest {
 
 ---
 
+## Testing Types for Spring Boot Applications
+
+![height:300px center](assets/generated/starting-with-sliced-tests.png)
+
+---
+
+
+## Sliced Testing Spring Boot Applications 101
+
+- **Core Concept**: Test a specific "slice" or layer of your application by loading a minimal, relevant part of the Spring application context.
+
+- **Confidence Gained**: Helps validate parts of your application where pure unit testing is insufficient, like the web, messaging, or data layer.
+
+- **Prominent Examples:** Web layer (`@WebMvcTest`) and database layer (`@DataJpaTest`)
+
+- **Pitfalls**: Requires careful configuration to ensure only the necessary slice of the context is loaded.
+
+- **Tools**: JUnit, Mockito, Spring Test, Spring Boot, Testcontainers
+
+---
+
 ## A Typical Spring Application Context
 
-![w:600 center](assets/generated/spring-context.png)
+![w:400 h:400 center](assets/generated/spring-context.png)
 
 ---
 
@@ -115,7 +137,9 @@ class BookControllerTest {
 
 ---
 
-![center](assets/generated/slicing-annotations.png)
+
+## There's More Slices!
+![center h:500 w:700](assets/generated/slicing-annotations.png)
 
 ---
 

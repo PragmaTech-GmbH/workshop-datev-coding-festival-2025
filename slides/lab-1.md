@@ -127,15 +127,16 @@ Notes:
 
 ### Getting Used To Testing At Work
 
-![](assets/generated/pr-reject.png)
+![width:900px center](assets/generated/pr-reject.png)
 
 ---
 
 # Goals of this Workshop
-
-- Demystify the complexities of testing Spring Boot applications
-- Provide clear explanations, practical insights, and actionable best practices
-- Become more productive and confident in your development and testing efforts
+1. Demystify the complexities of testing Spring Boot applications
+<br/>
+2. Provide clear explanations, practical insights, and actionable best practices
+   <br/>
+3. Become more productive and confident in your development and testing efforts
 
 ---
 
@@ -475,6 +476,28 @@ void shouldCompareXmlDocuments() {
   assertFalse(diff.hasDifferences(), diff.toString());
 }
 ```
+
+---
+
+## Testing Types for Spring Boot Applications
+
+![height:300px center](assets/generated/starting-with-unit-tests.png)
+
+---
+
+
+## Unit Testing Spring Boot Applications 101
+
+- **Core Concept**: Test individual components (classes, methods) in complete isolation from their dependencies.
+
+- **Confidence Gained**: Provides logarithmic verifications, ensuring that the smallest parts of your code work as expected under various conditions.
+
+- **Best Practices**: Focus on a single unit of work.
+
+
+- **Pitfalls**: Requires a well-thought-out class design. Poor design can lead to testing overly complex "god classes," making tests difficult to write and maintain.
+
+- **Tools**: JUnit (or Spock, TestNG, etc.), Mockito and assertion libraries like AssertJ or Hamcrest.
 
 ---
 

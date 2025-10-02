@@ -55,12 +55,12 @@
   <text x="585" y="140" font-size="12" text-anchor="middle">read</text>
 
   <!-- First Level to Second Level -->
-  <path d="M350 180 L350 290" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
-  <text x="335" y="260" font-size="12" text-anchor="middle">overflow</text>
+  <!-- <path d="M350 180 L350 290" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  <text x="335" y="260" font-size="12" text-anchor="middle">overflow</text> -->
 
   <!-- Second Level to First Level -->
-  <path d="M450 290 L450 180" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
-  <text x="465" y="260" font-size="12" text-anchor="middle">lookup</text>
+  <!--<path d="M450 290 L450 180" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  <text x="465" y="260" font-size="12" text-anchor="middle">lookup</text> -->
 
   <!-- Arrowhead definition -->
   <defs>
