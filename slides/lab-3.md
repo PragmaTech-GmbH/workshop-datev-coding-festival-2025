@@ -42,6 +42,26 @@ Philip Riecks - [PragmaTech GmbH](https://pragmatech.digital/) - [@rieckpil](htt
 
 ---
 
+## Full Context Testing Spring Boot Applications
+
+![height:300px center](assets/generated/starting-with-full-context-tests.png)
+
+---
+
+## Integration Testing Spring Boot Applications 101
+
+- **Core Concept**: Start the entire Spring application context, often on a random local port, and test the application through its external interfaces (e.g., REST API).
+
+- **Confidence Gained**: Validates the integration of all internal components working together as a complete application.
+
+- **Best Practices**: Use `@SpringBootTest` to run the app on a local port.
+
+- **Pitfalls**: Slower to run than unit or sliced tests. Managing the lifecycle of dependent services can be complex.
+
+- **Tools**: JUnit, Mockito, Spring Test, Spring Boot, Testcontainers, WireMock (for mocking external HTTP services), Selenium (for browser-based UI testing)
+
+---
+
 <!-- _class: section -->
 
 # Starting Everything
@@ -59,7 +79,9 @@ Notes:
 
 ## The Default Integration Test
 
-![](assets/generated/spring-boot-test-setup.png)
+Each new Spring Boot project comes with a default integration test:
+
+![w:700 h:300 center](assets/generated/spring-boot-test-setup.png)
 
 ---
 
