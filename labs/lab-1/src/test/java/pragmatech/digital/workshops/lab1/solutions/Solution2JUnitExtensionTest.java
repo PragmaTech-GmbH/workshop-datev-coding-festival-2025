@@ -18,14 +18,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class Solution2JUnitExtensionTest {
 
-  // Option 4: Using a custom annotation with the extension
-  @Target({ElementType.TYPE, ElementType.METHOD})
-  @Retention(RetentionPolicy.RUNTIME)
-  @ExtendWith(ConfigurableSlowTestDetector.class)
-  @interface SlowTestThreshold {
-    long value() default 100;
-  }
-
   // Extension implementation
   static class SlowTestDetector implements BeforeTestExecutionCallback, AfterTestExecutionCallback {
 
@@ -57,48 +49,7 @@ class Solution2JUnitExtensionTest {
       }
     }
 
-    private ExtensionContext.Store getStore(ExtensionContext context) {
-      return context.getStore(ExtensionContext.Namespace.create(getClass(), context.getRequiredTestMethod()));
-    }
-  }
-
-  // Extension that reads the threshold from the annotation
-  static class ConfigurableSlowTestDetector implements BeforeTestExecutionCallback, AfterTestExecutionCallback {
-
-    @Override
-    public void beforeTestExecution(ExtensionContext context) {
-      getStore(context).put("start", System.currentTimeMillis());
-    }
-
-    @Override
-    public void afterTestExecution(ExtensionContext context) {
-      long start = getStore(context).remove("start", Long.class);
-      long duration = System.currentTimeMillis() - start;
-
-      long threshold = getThreshold(context);
-
-      if (duration > threshold) {
-        System.out.println("\n⚠️ SLOW TEST DETECTED ⚠️");
-        System.out.println("Test: " + context.getDisplayName());
-        System.out.println("Duration: " + duration + "ms");
-        System.out.println("Threshold: " + threshold + "ms\n");
-      }
-    }
-
-    private long getThreshold(ExtensionContext context) {
-      // Try to get threshold from method annotation
-      SlowTestThreshold annotation = context.getRequiredTestMethod().getAnnotation(SlowTestThreshold.class);
-
-      // If not found, try class annotation
-      if (annotation == null) {
-        annotation = context.getRequiredTestClass().getAnnotation(SlowTestThreshold.class);
-      }
-
-      // Return the configured threshold or default to 100ms
-      return annotation != null ? annotation.value() : 100;
-    }
-
-    private ExtensionContext.Store getStore(ExtensionContext context) {
+    private ExtensionContext.Store getStore(ExtensionContext context){
       return context.getStore(ExtensionContext.Namespace.create(getClass(), context.getRequiredTestMethod()));
     }
   }
@@ -196,6 +147,55 @@ class Solution2JUnitExtensionTest {
       int result = 1 + 1;
 
       assertEquals(2, result);
+    }
+  }
+
+  // Option 4: Using a custom annotation with the extension
+  @Target({ElementType.TYPE, ElementType.METHOD})
+  @Retention(RetentionPolicy.RUNTIME)
+  @ExtendWith(ConfigurableSlowTestDetector.class)
+  @interface SlowTestThreshold {
+    long value() default 100;
+  }
+
+  // Extension that reads the threshold from the annotation
+  static class ConfigurableSlowTestDetector implements BeforeTestExecutionCallback, AfterTestExecutionCallback {
+
+    @Override
+    public void beforeTestExecution(ExtensionContext context) {
+      getStore(context).put("start", System.currentTimeMillis());
+    }
+
+    @Override
+    public void afterTestExecution(ExtensionContext context) {
+      long start = getStore(context).remove("start", Long.class);
+      long duration = System.currentTimeMillis() - start;
+
+      long threshold = getThreshold(context);
+
+      if (duration > threshold) {
+        System.out.println("\n⚠️ SLOW TEST DETECTED ⚠️");
+        System.out.println("Test: " + context.getDisplayName());
+        System.out.println("Duration: " + duration + "ms");
+        System.out.println("Threshold: " + threshold + "ms\n");
+      }
+    }
+
+    private long getThreshold(ExtensionContext context) {
+      // Try to get threshold from method annotation
+      SlowTestThreshold annotation = context.getRequiredTestMethod().getAnnotation(SlowTestThreshold.class);
+
+      // If not found, try class annotation
+      if (annotation == null) {
+        annotation = context.getRequiredTestClass().getAnnotation(SlowTestThreshold.class);
+      }
+
+      // Return the configured threshold or default to 100ms
+      return annotation != null ? annotation.value() : 100;
+    }
+
+    private ExtensionContext.Store getStore(ExtensionContext context) {
+      return context.getStore(ExtensionContext.Namespace.create(getClass(), context.getRequiredTestMethod()));
     }
   }
 }

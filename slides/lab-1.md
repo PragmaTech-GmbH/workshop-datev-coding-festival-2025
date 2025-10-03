@@ -52,9 +52,9 @@ Philip Riecks - [PragmaTech GmbH](https://pragmatech.digital/) - [@rieckpil](htt
 - 9:00 - 10:30: **Lab 1 - Introduction and Spring Boot Testing Basics**  (90 minutes)
 - 10:30 - 11:00: **Coffee Break** (30 minutes)
 - 11:00 - 12:30: **Lab 2 - Sliced Testing** (90 minutes)
-- 12:30 - 13:30 **Lunch** (60 minutes)
+- 12:30 - 13:30: **Lunch** (60 minutes)
 - 13:30 - 15:00: **Lab 3 - Integration Testing** (90 minutes)
-- 15:00 - 15:30 **Coffee Break** (30 minutes)
+- 15:00 - 15:30: **Coffee Break** (30 minutes)
 - 15:30 - 17:00: **Lab 4 - Pitfalls, Best Practices, AI & Outlook** (90 minutes)
 
 ---
@@ -140,13 +140,6 @@ Notes:
 
 ---
 
-<!-- _class: section -->
-
-# Spring Boot Testing Basics
-## Spring Boot Starter Test, Build Tools, Conventions, Unit Testing
-
----
-
 ![bg left:33%](assets/generated/northstar.jpg)
 
 ## My Overall Northstar
@@ -170,6 +163,13 @@ Good tests don't just catch bugs - they give you the confidence to say "yes" wit
 - Regression Prevention
 - Become more Productive
 - Use Tests as a Playground to Explore New Technologies
+
+---
+
+<!-- _class: section -->
+
+# Spring Boot Testing Basics
+## Spring Boot Starter Test, Build Tools, Conventions, Unit Testing
 
 ---
 
@@ -367,7 +367,7 @@ void shouldProvideFluentAssertions() {
 ## Transitive Test Dependency: Hamcrest
 
 - Fluent assertion library
-- Occasionally used within Spring Test, e.g. MockMvc verifications
+- Occasionally used within Spring Test, e.g. `MockMvc` verifications
 - Implementation for many other programming languages
 
 ```java
