@@ -65,7 +65,8 @@ class Solution2JUnitExtensionTest {
     void fastTest() {
       // This test should run quickly
       int result = 1 + 1;
-      assert result == 2;
+
+      assertEquals(2, result);
     }
 
     @Test
@@ -73,9 +74,10 @@ class Solution2JUnitExtensionTest {
     void slowTest() throws InterruptedException {
       // This test is artificially slowed down to exceed the threshold
       Thread.sleep(150);
-      int result = 1 + 1;
-      assertEquals(2, result);
 
+      int result = 1 + 1;
+
+      assertEquals(2, result);
     }
   }
 
@@ -113,7 +115,9 @@ class Solution2JUnitExtensionTest {
     @DisplayName("Test with default threshold (100ms)")
     void testWithDefaultThreshold() throws InterruptedException {
       Thread.sleep(150);
+
       int result = 1 + 1;
+
       assertEquals(2, result);
     }
 
@@ -121,7 +125,9 @@ class Solution2JUnitExtensionTest {
     @DisplayName("Test with custom threshold (200ms)")
     void testWithCustomThreshold() throws InterruptedException {
       Thread.sleep(150); // This shouldn't trigger a warning with 200ms threshold
+
       int result = 1 + 1;
+
       assertEquals(2, result);
     }
   }
@@ -134,6 +140,7 @@ class Solution2JUnitExtensionTest {
     @DisplayName("Test with default annotation threshold (100ms)")
     void testWithDefaultAnnotationThreshold() throws InterruptedException {
       Thread.sleep(150);
+
       int result = 1 + 1;
 
       assertEquals(2, result);
@@ -144,6 +151,7 @@ class Solution2JUnitExtensionTest {
     @DisplayName("Test with custom annotation threshold (300ms)")
     void testWithCustomAnnotationThreshold() throws InterruptedException {
       Thread.sleep(150); // This shouldn't trigger a warning with 300ms threshold
+
       int result = 1 + 1;
 
       assertEquals(2, result);

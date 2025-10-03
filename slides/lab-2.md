@@ -40,23 +40,11 @@ Philip Riecks - [PragmaTech GmbH](https://pragmatech.digital/) - [@rieckpil](htt
 
 # Lab 2
 
-## Sliced Testing
+## Sliced Testing: Working with a minimal Spring TestContext
 
 ---
 
-## Unit Testing Has Limits
-
-- **Request Mapping**: Does `/api/users/{id}` actually resolve to your desired method?
-- **Validation**: Will incomplete request bodys result in a 400 bad request or return an accidental 200?
-- **Serialization**: Are your JSON objects serialized and deserialized correctly?
-- **Headers**: Are you setting Content-Type or custom headers correctly?
-- **Security**: Are your Spring Security configuration and other authorization checks enforced?
-- **Database**: Can we effectively map our complex JPA entity to a database table?
-- etc.
-
----
-
-## Unit Testing a Controller
+## Unit Testing a Controller?
 
 ```java
 @ExtendWith(MockitoExtension.class)
@@ -71,6 +59,19 @@ class BookControllerUnitTest {
   // ...
 }
 ```
+  
+---
+
+## Unit Testing Has Limits
+
+- **Request Mapping**: Does `/api/books/{id}` actually resolve to your desired method?
+- **Validation**: Will incomplete request bodys result in a 400 bad request or return an accidental 200?
+- **Serialization**: Are your JSON objects serialized and deserialized correctly?
+- **Headers**: Are you setting Content-Type or custom headers correctly?
+- **Security**: Are your Spring Security configuration and other authorization checks enforced?
+- **Database**: Can we effectively map our complex JPA entity to a database table?
+- etc.
+
 
 ---
 
@@ -90,9 +91,23 @@ class BookControllerUnitTest {
 ---
 
 
+## A Typical Spring `ApplicationContext`
+
+Our application context consists of many components (aka. Spring beans) from different types:
+
+![w:400 h:400 center](assets/generated/spring-context.png)
+
+---
+
+## We Can Slice It!
+
+![w:600 h:500 center](assets/generated/spring-sliced-context.png)
+
+---
+
 ## Sliced Testing Spring Boot Applications 101
 
-- **Core Concept**: Test a specific "slice" or layer of your application by loading a minimal, relevant part of the Spring application context.
+- **Core Concept**: Test a specific "slice" or layer of your application by loading a minimal, relevant part of the Spring `ApplicationContext.
 
 - **Confidence Gained**: Helps validate parts of your application where pure unit testing is insufficient, like the web, messaging, or data layer.
 
@@ -101,16 +116,6 @@ class BookControllerUnitTest {
 - **Pitfalls**: Requires careful configuration to ensure only the necessary slice of the context is loaded.
 
 - **Tools**: JUnit, Mockito, Spring Test, Spring Boot, Testcontainers
-
----
-
-## A Typical Spring Application Context
-
-![w:400 h:400 center](assets/generated/spring-context.png)
-
----
-
-![w:700 center](assets/generated/spring-sliced-context.png)
 
 ---
 
@@ -137,6 +142,12 @@ class BookControllerTest {
 
 ---
 
+
+## `@WebMvcTest` Under the Hood
+
+![](assets/generated/sliced-testing-explained.png)
+
+---
 
 ## There's More Slices!
 ![center h:500 w:700](assets/generated/slicing-annotations.png)

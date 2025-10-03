@@ -21,10 +21,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * This test class demonstrates testing JPA repositories with H2 in-memory database.
- * It also showcases the limitations when using PostgreSQL-specific features.
  */
 @DataJpaTest
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 class BookRepositoryInMemoryTest {
 
   private static final Logger log =
@@ -91,13 +89,5 @@ class BookRepositoryInMemoryTest {
 
     log.error("Expected exception when using PostgreSQL-specific features: {}", exception.getMessage());
     assertThat(exception.getMessage()).contains("to_tsvector");
-  }
-
-  @Test
-  void shouldDemonstrateH2CompatibilityMode() {
-    // Verify we're using PostgreSQL mode
-    String mode = jdbcTemplate.queryForObject("SELECT SETTING_VALUE FROM INFORMATION_SCHEMA.SETTINGS WHERE SETTING_NAME = 'MODE'", String.class);
-
-    assertEquals("PostgreSQL", mode, "H2 should be running in PostgreSQL mode");
   }
 }

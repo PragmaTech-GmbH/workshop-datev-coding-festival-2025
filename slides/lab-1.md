@@ -695,7 +695,7 @@ public class TimingExtension implements BeforeTestExecutionCallback, AfterTestEx
 # Time For Some Exercises
 ## Lab 1
 
-- Set up the [repository](https://github.com/PragmaTech-GmbH/workshop-datev-coding-festival-2025) locally - https://github.com/PragmaTech-GmbH/workshop-datev-coding-festival-2025
+- Check out the [repository](https://github.com/PragmaTech-GmbH/workshop-datev-coding-festival-2025) locally and open it at the project root inside your IDE
 - Work locally (requires Podman and Java 21) or use GitHub Codespaces (120 hours/month free)
 - For Codespaces, pick at least 4-Cores (16 GB RAM) and region `Europe West`
 - Navigate to the `labs/lab-1` folder in the repository and complete the tasks as described in the `README` file of that folder 
