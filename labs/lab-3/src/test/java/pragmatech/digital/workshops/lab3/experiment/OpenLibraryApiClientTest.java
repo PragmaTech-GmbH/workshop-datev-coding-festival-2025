@@ -1,7 +1,8 @@
 package pragmatech.digital.workshops.lab3.experiment;
 
-import java.io.IOException;
-
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.tomakehurst.wiremock.client.WireMock;
+import com.github.tomakehurst.wiremock.common.ConsoleNotifier;
 import com.github.tomakehurst.wiremock.junit5.WireMockExtension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,6 +16,8 @@ import pragmatech.digital.workshops.lab3.dto.BookMetadataResponse;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
 import static com.github.tomakehurst.wiremock.client.WireMock.get;
+import static com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo;
+import static com.github.tomakehurst.wiremock.client.WireMock.urlPathEqualTo;
 import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.wireMockConfig;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -23,7 +26,8 @@ class OpenLibraryApiClientTest {
 
   @RegisterExtension
   static WireMockExtension wireMockServer = WireMockExtension.newInstance()
-    .options(wireMockConfig().dynamicPort())
+    .options(wireMockConfig().dynamicPort()
+      .notifier(new ConsoleNotifier(true)))
     .build();
 
   private OpenLibraryApiClient cut;
@@ -34,16 +38,19 @@ class OpenLibraryApiClientTest {
       .baseUrl(wireMockServer.baseUrl())
       .build();
 
-    cut = new OpenLibraryApiClient(webClient);
+    cut = new OpenLibraryApiClient(webClient, new ObjectMapper());
   }
 
   @Test
-  void shouldReturnBookMetadataWhenApiReturnsValidResponse() throws IOException {
+  void shouldReturnBookMetadataWhenApiReturnsValidResponse() {
     // Arrange
     String isbn = "9780132350884";
 
     wireMockServer.stubFor(
-      get("/isbn/" + isbn)
+      get(urlPathEqualTo("/api/books"))
+        .withQueryParam("jscmd", WireMock.equalTo("data"))
+        .withQueryParam("format", WireMock.equalTo("json"))
+        .withQueryParam("bibkeys", WireMock.equalTo(isbn))
         .willReturn(aResponse()
           .withHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
           .withBodyFile(isbn + "-success.json"))
@@ -55,7 +62,7 @@ class OpenLibraryApiClientTest {
     // Assert
     assertThat(result).isNotNull();
     assertThat(result.title()).isEqualTo("Clean Code");
-    assertThat(result.getMainIsbn()).isEqualTo("9780132350884");
+    assertThat(result.getIsbn13()).isEqualTo("9780132350884");
     assertThat(result.getPublisher()).isEqualTo("Prentice Hall");
     assertThat(result.numberOfPages()).isEqualTo(431);
   }
@@ -66,7 +73,10 @@ class OpenLibraryApiClientTest {
     String isbn = "9999999999";
 
     wireMockServer.stubFor(
-      get("/isbn/" + isbn)
+      get("/api/books" + isbn)
+        .withQueryParam("jscmd", WireMock.equalTo("data"))
+        .withQueryParam("format", WireMock.equalTo("json"))
+        .withQueryParam("bibkeys", WireMock.equalTo(isbn))
         .willReturn(aResponse()
           .withStatus(404)));
 

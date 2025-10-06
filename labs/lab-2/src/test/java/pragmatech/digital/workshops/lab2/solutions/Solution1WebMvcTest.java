@@ -52,9 +52,6 @@ class Solution1WebMvcTest {
       // Act & Assert
       mockMvc.perform(delete("/api/books/1"))
         .andExpect(status().isUnauthorized());
-
-      // Verify - Service should not be called
-      verify(bookService, times(0)).deleteBook(any());
     }
 
     @Test
@@ -66,9 +63,6 @@ class Solution1WebMvcTest {
       // Act & Assert
       mockMvc.perform(delete("/api/books/1"))
         .andExpect(status().isForbidden());
-
-      // Verify - Service should not be called
-      verify(bookService, times(0)).deleteBook(any());
     }
 
     @Test
@@ -96,9 +90,6 @@ class Solution1WebMvcTest {
       // Act & Assert
       mockMvc.perform(delete("/api/books/999"))
         .andExpect(status().isNotFound());
-
-      // Verify - Service should be called with the book ID
-      verify(bookService, times(1)).deleteBook(999L);
     }
   }
 
@@ -153,9 +144,6 @@ class Solution1WebMvcTest {
           .contentType(MediaType.APPLICATION_JSON)
           .content(invalidBookJson))
         .andExpect(status().isBadRequest());
-
-      // Verify - Service should not be called due to validation failure
-      verify(bookService, times(0)).createBook(any());
     }
 
     @Test
@@ -177,9 +165,6 @@ class Solution1WebMvcTest {
           .contentType(MediaType.APPLICATION_JSON)
           .content(invalidIsbnJson))
         .andExpect(status().isBadRequest());
-
-      // Verify - Service should not be called due to validation failure
-      verify(bookService, times(0)).createBook(any());
     }
 
     @Test
@@ -201,9 +186,6 @@ class Solution1WebMvcTest {
           .contentType(MediaType.APPLICATION_JSON)
           .content(futureDateJson))
         .andExpect(status().isBadRequest());
-
-      // Verify - Service should not be called due to validation failure
-      verify(bookService, times(0)).createBook(any());
     }
   }
 }

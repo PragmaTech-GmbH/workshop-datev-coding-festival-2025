@@ -38,7 +38,7 @@ Philip Riecks - [PragmaTech GmbH](https://pragmatech.digital/) - [@rieckpil](htt
 
 # Lab 3
 
-## Integration Testing
+## Integration Testing: Testing against a full Spring TestContext
 
 ---
 
@@ -98,22 +98,26 @@ Each new Spring Boot project comes with a default integration test:
 
 - Provide external infrastructure with [Testcontainers](https://testcontainers.com/)
 - Start Tomcat with: `@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)`
-- Consider WireMock/MockServer for stubbing external HTTP services
-- Test controller endpoints via: `MockMvc`, `WebTestClient`, `TestRestTemplate`
+- Test controller endpoints via: `MockMvc` (no real HTTP communication), `WebTestClient` (real HTTP communication), `TestRestTemplate` (real HTTP communication)
+- Consider WireMock/MockServer for stubbing dependent HTTP services
 
 ---
 
 ## Introducing: Microservice HTTP Communication
 
-Our library application got a new feature. We now fetch book metadata from a remote service:
+Our library application got a new feature. We now fetch book metadata from a [remote service](https://openlibrary.org/api/books?jscmd=data&format=json&bibkeys=9780132350884):
 
 ```java
-public BookMetadataResponse getBookByIsbn(String isbn) {
-  return webClient.get()
-    .uri("/isbn/{isbn}", isbn)
-    .retrieve()
-    .bodyToMono(BookMetadataResponse.class)
-    .block();
+webClient.get()
+  .uri(
+    "/api/books",
+    uriBuilder ->
+      uriBuilder
+        .queryParam("jscmd", "data")
+        .queryParam("format", "json")
+        .queryParam("bibkeys", isbn)
+        .build())
+  .retrieve();
 }
 ```
 
@@ -143,7 +147,8 @@ public BookMetadataResponse getBookByIsbn(String isbn) {
 
 ```java
 wireMockServer.stubFor(
-  get("/isbn/" + isbn)
+  get(urlPathEqualTo("/api/books/" + isbn))
+     // ... query param matchers
     .willReturn(aResponse()
       .withHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
       .withBodyFile(isbn + "-success.json"))

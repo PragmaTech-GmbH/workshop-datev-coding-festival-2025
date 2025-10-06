@@ -1,8 +1,7 @@
 package pragmatech.digital.workshops.lab3.client;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 import pragmatech.digital.workshops.lab3.dto.BookMetadataResponse;
@@ -13,20 +12,28 @@ import pragmatech.digital.workshops.lab3.dto.BookMetadataResponse;
 @Component
 public class OpenLibraryApiClient {
 
-  private static final Logger logger = LoggerFactory.getLogger(OpenLibraryApiClient.class);
-
   private final WebClient webClient;
+  private final ObjectMapper objectMapper;
 
-  @Autowired
-  public OpenLibraryApiClient(WebClient openLibraryWebClient) {
+  public OpenLibraryApiClient(WebClient openLibraryWebClient, ObjectMapper objectMapper) {
     this.webClient = openLibraryWebClient;
+    this.objectMapper = objectMapper;
   }
 
   public BookMetadataResponse getBookByIsbn(String isbn) {
-    return webClient.get()
-      .uri("/isbn/{isbn}", isbn)
+    ObjectNode node = webClient.get()
+      .uri(
+        "/api/books",
+        uriBuilder ->
+          uriBuilder
+            .queryParam("jscmd", "data")
+            .queryParam("format", "json")
+            .queryParam("bibkeys", isbn)
+            .build())
       .retrieve()
-      .bodyToMono(BookMetadataResponse.class)
+      .bodyToMono(ObjectNode.class)
       .block();
+
+    return objectMapper.convertValue(node.get(isbn), BookMetadataResponse.class);
   }
 }
