@@ -234,7 +234,11 @@ This goes into the cache key (`MergedContextConfiguration`):
 
 ## Spring Test Profiler
 
-TODO
+![center](assets/spring-test-profiler-logo.png)
+
+A Spring Test utility that provides visualization and insights for Spring Test execution, with a focus on Spring context caching statistics. 
+
+**Overall goal**: Identify optimization opportunities in your Spring Test suite to speed up your builds and ship to production faster and with more confidence.
 
 ---
 

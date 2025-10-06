@@ -1,10 +1,12 @@
 package pragmatech.digital.workshops.lab4.config;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
-import com.github.tomakehurst.wiremock.client.WireMock;
 import org.springframework.http.MediaType;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
+import static com.github.tomakehurst.wiremock.client.WireMock.equalTo;
+import static com.github.tomakehurst.wiremock.client.WireMock.get;
+import static com.github.tomakehurst.wiremock.client.WireMock.urlPathEqualTo;
 
 public class OpenLibraryApiStub {
 
@@ -16,7 +18,10 @@ public class OpenLibraryApiStub {
 
   public void stubForSuccessfulBookResponse(String isbn) {
     this.wireMockServer.stubFor(
-      WireMock.get("/isbn/" + isbn)
+      get(urlPathEqualTo("/api/books"))
+        .withQueryParam("jscmd", equalTo("data"))
+        .withQueryParam("format", equalTo("json"))
+        .withQueryParam("bibkeys", equalTo(isbn))
         .willReturn(
           aResponse()
             .withHeader("Content-Type", MediaType.APPLICATION_JSON_VALUE)

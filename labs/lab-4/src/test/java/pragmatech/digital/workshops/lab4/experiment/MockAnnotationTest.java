@@ -12,6 +12,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import pragmatech.digital.workshops.lab4.client.OpenLibraryApiClient;
 import pragmatech.digital.workshops.lab4.dto.BookCreationRequest;
 import pragmatech.digital.workshops.lab4.dto.BookMetadataResponse;
+import pragmatech.digital.workshops.lab4.dto.Cover;
 import pragmatech.digital.workshops.lab4.entity.Book;
 import pragmatech.digital.workshops.lab4.repository.BookRepository;
 import pragmatech.digital.workshops.lab4.service.BookService;
@@ -55,7 +56,7 @@ class MockAnnotationTest {
       "/books/123",
       "Enriched Title",
       null, null, null, null, null, null, null,
-      "Book description", null, null);
+      "Book description", null, new Cover("http://example.com/cover.jpg", "http://example.com/cover.jpg", "http://example.com/cover.jpg"));
 
     Book savedBook = new Book();
     savedBook.setId(42L);
