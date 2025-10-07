@@ -55,7 +55,8 @@ Philip Riecks - [PragmaTech GmbH](https://pragmatech.digital/) - [@rieckpil](htt
 - 12:30 - 13:30: **Lunch** (60 minutes)
 - 13:30 - 15:00: **Lab 3 - Integration Testing** (90 minutes)
 - 15:00 - 15:30: **Coffee Break** (30 minutes)
-- 15:30 - 17:00: **Lab 4 - Pitfalls, Best Practices, AI & Outlook** (90 minutes)
+- 15:30 - 16:30: **Lab 4 - Pitfalls, Best Practices, AI & Outlook** (60 minutes)
+- 16:30 - 17:00: **Final Q&A and Wrap-Up**
 
 ---
 ![bg right:33%](assets/generated/hza.jpg)

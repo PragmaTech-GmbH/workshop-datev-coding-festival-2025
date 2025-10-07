@@ -47,7 +47,8 @@ The workshop will be held in either English or German, depending on the particip
 - 12:30 - 13:30 **Lunch**
 - 13:30 - 15:00: Lab 3 (90 minutes)
 - 15:00 - 15:30 **Coffee Break and time for exercises**
-- 15:30 - 17:00: Lab 4 (90 minutes)
+- 15:30 - 16:30: Lab 4 (60 minutes)
+- 16:30 - 17:00: **Final Q&A and wrap-up**
 
 ## GitHub Codespaces
 

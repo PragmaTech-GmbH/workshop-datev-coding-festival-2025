@@ -226,8 +226,12 @@ Notes:
 - Online Course: [Testing Spring Boot Applications Masterclass](https://rieckpil.de/testing-spring-boot-applications-masterclass/) (on-demand, 12 hours, 130+ modules)
 - eBook: [30 Testing Tools and Libraries Every Java Developer Must Know](https://leanpub.com/java-testing-toolbox)
 - eBook: [Stratospheric - From Zero to Production with AWS](https://leanpub.com/stratospheric)
-- Spring Boot [testing workshops](https://pragmatech.digital/workshops/) (in-house/remote/hybrid)
+- Further Spring Boot [testing workshops](https://pragmatech.digital/workshops/) (in-house/remote/hybrid)
 - [Consulting offerings](https://pragmatech.digital/consulting/), e.g. the Test Maturity Assessment
+
+---
+
+## Time for Q&A
 
 ---
 
