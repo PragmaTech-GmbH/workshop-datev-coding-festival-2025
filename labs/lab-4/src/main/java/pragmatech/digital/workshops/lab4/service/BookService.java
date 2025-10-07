@@ -59,8 +59,4 @@ public class BookService {
       })
       .orElse(false);
   }
-
-  public Optional<Book> updateBook(Long id, BookUpdateRequest request) {
-    throw new UnsupportedOperationException("Not implemented yet");
-  }
 }

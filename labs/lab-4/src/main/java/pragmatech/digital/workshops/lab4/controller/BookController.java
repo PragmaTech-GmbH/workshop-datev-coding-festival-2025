@@ -16,7 +16,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 import pragmatech.digital.workshops.lab4.dto.BookCreationRequest;
 import pragmatech.digital.workshops.lab4.dto.BookUpdateRequest;
 import pragmatech.digital.workshops.lab4.entity.Book;
-import pragmatech.digital.workshops.lab4.repository.BookRepository;
 import pragmatech.digital.workshops.lab4.service.BookService;
 
 @RestController
@@ -24,11 +23,9 @@ import pragmatech.digital.workshops.lab4.service.BookService;
 public class BookController {
 
   private final BookService bookService;
-  private final BookRepository bookRepository;
 
-  public BookController(BookService bookService, BookRepository bookRepository) {
+  public BookController(BookService bookService) {
     this.bookService = bookService;
-    this.bookRepository = bookRepository;
   }
 
   @GetMapping
@@ -54,19 +51,13 @@ public class BookController {
       .build();
   }
 
-  @PutMapping("/{id}")
-  public ResponseEntity<Book> updateBook(
-    @PathVariable Long id,
-    @Valid @RequestBody BookUpdateRequest request) {
-    return bookService.updateBook(id, request)
-      .map(ResponseEntity::ok)
-      .orElse(ResponseEntity.notFound().build());
-  }
-
   @DeleteMapping("/{id}")
   public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
     return bookService.deleteBook(id)
       ? ResponseEntity.noContent().build()
       : ResponseEntity.notFound().build();
   }
+
+  // @PutMapping("/{id}")
+  // To be developed by AI
 }

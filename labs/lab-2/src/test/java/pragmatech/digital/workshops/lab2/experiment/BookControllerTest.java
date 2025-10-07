@@ -57,6 +57,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 @Import(SecurityConfig.class)
 @WebMvcTest(BookController.class)
+// @WebMvcTest(controllers = BookController.class, excludeAutoConfiguration = SecurityAutoConfiguration.class)
 class BookControllerTest {
 
   @Autowired

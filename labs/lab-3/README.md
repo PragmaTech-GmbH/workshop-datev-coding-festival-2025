@@ -27,7 +27,6 @@ In this exercise, you'll create unit tests for the `OpenLibraryApiClient` using 
 2. Implement test methods to verify client behavior for:
    - Successful API responses (200 status)
    - Server error responses (500 status)
-3. Optional: Modify the client to handle 404 responses gracefully by returning null instead of throwing an exception
 
 **Tips:**
 - Use WireMock's JUnit 5 extension (`@RegisterExtension`) or bootstrap it manually
@@ -41,7 +40,7 @@ In this exercise, you'll create unit tests for the `OpenLibraryApiClient` using 
 This exercise demonstrates how small changes in test configuration affect Spring Test context caching.
 
 **Tasks:**
-1. Examine the five Application*IT test classes in the `exercises` package
+1. Examine the five `Application*IT` test classes in the `exercises` package
 2. Run all five tests and observe the log output for context creation messages
 3. Identify which configuration differences cause new contexts to be created
 4. Experiment with additional configuration changes to see their impact

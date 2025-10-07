@@ -1,6 +1,7 @@
 package pragmatech.digital.workshops.lab3.solutions;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.tomakehurst.wiremock.common.ConsoleNotifier;
 import com.github.tomakehurst.wiremock.junit5.WireMockExtension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -31,7 +32,7 @@ class Solution1WireMockTest {
 
   @RegisterExtension
   static WireMockExtension wireMockServer = WireMockExtension.newInstance()
-    .options(wireMockConfig().dynamicPort())
+    .options(wireMockConfig().dynamicPort().notifier(new ConsoleNotifier(true)))
     .build();
 
   private OpenLibraryApiClient cut;
@@ -86,47 +87,5 @@ class Solution1WireMockTest {
     );
 
     assertThat(exception.getStatusCode().value()).isEqualTo(500);
-  }
-
-  /**
-   * Note: This test will fail with the current implementation of OpenLibraryApiClient.
-   * <p>
-   * To make it pass, the client needs to be modified to handle 404 responses by returning null.
-   * Here's how the getBookByIsbn method in OpenLibraryApiClient could be modified:
-   * <p>
-   * ```java
-   * public BookMetadataResponse getBookByIsbn(String isbn) {
-   * return webClient.get()
-   * .uri("/isbn/{isbn}", isbn)
-   * .retrieve()
-   * .onStatus(status -> status.value() == 404,
-   * response -> Mono.empty())
-   * .bodyToMono(BookMetadataResponse.class)
-   * .onErrorReturn(WebClientResponseException.NotFound.class, null)
-   * .block();
-   * }
-   * ```
-   */
-  @Test
-  void shouldReturnNullWhenBookNotFound() {
-    // Arrange
-    String isbn = "9999999999";
-
-    wireMockServer.stubFor(
-      get(urlPathEqualTo("/api/books"))
-        .willReturn(aResponse()
-          .withStatus(404)));
-
-    // Currently, this will throw WebClientResponseException.NotFound
-    // After modifying the client, it should return null
-
-    // Act & Assert - This will fail until the client is modified
-    // BookMetadataResponse result = cut.getBookByIsbn(isbn);
-    // assertThat(result).isNull();
-
-    // For now, we expect the exception
-    assertThrows(WebClientResponseException.class, () ->
-      cut.getBookByIsbn(isbn)
-    );
   }
 }

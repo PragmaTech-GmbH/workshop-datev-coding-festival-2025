@@ -8,6 +8,11 @@
 - Master techniques for testing asynchronous code
 - Optimize Spring test execution with strategic context configuration
 
+## Claude Code
+
+Prompt: `in the project code for lab-4, help me develop an HTTP PUT request to update an existing book, outsource the actual work to the
+BookService`
+
 ## Hints
 
 - JUnit 5 provides a more flexible and powerful extension model than JUnit 4

@@ -25,6 +25,11 @@ _DATEV Coding Festival 09.10.2025_
 
 Philip Riecks - [PragmaTech GmbH](https://pragmatech.digital/) - [@rieckpil](https://x.com/rieckpil)
 
+
+---
+
+## Discuss Exercises from Lab 3
+
 --- 
 
 <!-- header: 'Testing Spring Boot Applications Demystified Workshop @ DATEV Coding Festival 09.10.2025' -->
@@ -38,9 +43,6 @@ Philip Riecks - [PragmaTech GmbH](https://pragmatech.digital/) - [@rieckpil](htt
 
 ---
 
-## Discuss Exercises from Lab 3
-
----
 
 # Last Lab
 ## Spring Boot Testing Best Practices & Pitfalls
