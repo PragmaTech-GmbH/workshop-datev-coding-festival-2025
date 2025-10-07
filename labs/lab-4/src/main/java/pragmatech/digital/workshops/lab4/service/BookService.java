@@ -51,17 +51,6 @@ public class BookService {
     return bookRepository.findById(id);
   }
 
-  public Optional<Book> updateBook(Long id, BookUpdateRequest request) {
-    return bookRepository.findById(id)
-      .map(book -> {
-        book.setTitle(request.title());
-        book.setAuthor(request.author());
-        book.setPublishedDate(request.publishedDate());
-        book.setStatus(request.status());
-        return bookRepository.save(book);
-      });
-  }
-
   public boolean deleteBook(Long id) {
     return bookRepository.findById(id)
       .map(book -> {

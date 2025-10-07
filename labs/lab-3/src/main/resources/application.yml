@@ -12,5 +12,5 @@ spring:
 book:
   metadata:
     api:
-      url: https://openlibrary.org
+      base-url: "https://openlibrary.org/wrong/path/for/demo"
       timeout: 5

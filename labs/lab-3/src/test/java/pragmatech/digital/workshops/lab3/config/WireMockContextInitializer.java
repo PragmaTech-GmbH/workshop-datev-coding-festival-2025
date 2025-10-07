@@ -1,6 +1,7 @@
 package pragmatech.digital.workshops.lab3.config;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
+import com.github.tomakehurst.wiremock.common.ConsoleNotifier;
 import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +16,7 @@ public class WireMockContextInitializer implements ApplicationContextInitializer
 
   @Override
   public void initialize(ConfigurableApplicationContext applicationContext) {
-    WireMockServer wireMockServer = new WireMockServer(WireMockConfiguration.wireMockConfig().dynamicPort());
+    WireMockServer wireMockServer = new WireMockServer(WireMockConfiguration.wireMockConfig().dynamicPort().notifier(new ConsoleNotifier(true)));
     wireMockServer.start();
 
     // Register a shutdown hook to stop WireMock when the context is closed
@@ -39,7 +40,7 @@ public class WireMockContextInitializer implements ApplicationContextInitializer
 
     // Set the WebClient base URL property to point to our WireMock server
     TestPropertyValues.of(
-      "book.metadata.api.url=http://localhost:" + wireMockServer.port()
+      "book.metadata.api.base-url=http://localhost:" + wireMockServer.port()
     ).applyTo(applicationContext);
 
     logger.info("WireMock initialized on port {}", wireMockServer.port());

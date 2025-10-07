@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
+import org.springframework.test.context.transaction.TestTransaction;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
@@ -46,10 +47,8 @@ class BookRepositoryPostgresTest {
 
   @BeforeEach
   void setUp() {
-    // Clean up before each test
-    bookRepository.deleteAll();
 
-    // Set up sample books
+  // Set up sample books
     Book book1 = new Book("978-1-1111-1111-1", "Advanced Java Programming", "Java Expert", LocalDate.of(2020, 1, 1));
     Book book2 = new Book("978-2-2222-2222-2", "Java for Beginners", "Another Author", LocalDate.of(2021, 2, 2));
     Book book3 = new Book("978-3-3333-3333-3", "Python Programming", "Python Guru", LocalDate.of(2022, 3, 3));

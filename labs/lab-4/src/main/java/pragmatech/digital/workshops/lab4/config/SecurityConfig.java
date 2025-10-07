@@ -26,6 +26,7 @@ public class SecurityConfig {
       .authorizeHttpRequests(auth -> auth
         .requestMatchers(HttpMethod.GET, "/api/books").permitAll()
         .requestMatchers(HttpMethod.GET, "/api/books/{id}").hasRole("USER")
+        .requestMatchers(HttpMethod.PUT, "/api/books/{id}").hasRole("LIBRARIAN")
         .requestMatchers(HttpMethod.DELETE, "/api/books/{id}").hasRole("ADMIN")
         .anyRequest().authenticated()
       )

@@ -10,7 +10,7 @@ img[alt~="center"] {
 }
 </style>
 
-![bg](./assets/barcelona-spring-io.jpg)
+![bg](./assets/nuremberg.jpg)
 
 ---
 
@@ -21,41 +21,30 @@ img[alt~="center"] {
 
 ## Full-Day Workshop
 
-_Spring I/O Conference Workshop 21.05.2025_
+_DATEV Coding Festival 09.10.2025_
 
 Philip Riecks - [PragmaTech GmbH](https://pragmatech.digital/) - [@rieckpil](https://x.com/rieckpil)
 
 
---- 
-
-<!-- header: 'Testing Spring Boot Applications Demystified Workshop @ Spring I/O 21.05.2025' -->
-<!-- footer: '![w:32 h:32](assets/generated/logo.webp)' -->
-
-![bg left:33%](assets/generated/lab-2.jpg)
-
-# Lab 2
-
-## Sliced Testing
-
 ---
+
+<!-- header: 'Testing Spring Boot Applications Demystified Workshop @ DATEV Coding Festival 09.10.2025' -->
+<!-- footer: '![w:32 h:32](assets/generated/logo.webp)' -->
 
 ## Discuss Exercises from Lab 1
 
 ---
 
-## Unit Testing Has Limits
 
-- **Request Mapping**: Does `/api/users/{id}` actually resolve to your desired method?
-- **Validation**: Will incomplete request bodys result in a 400 bad request or return an accidental 200?
-- **Serialization**: Are your JSON objects serialized and deserialized correctly?
-- **Headers**: Are you setting Content-Type or custom headers correctly?
-- **Security**: Are your Spring Security configuration and other authorization checks enforced?
-- **Database**: Can we effectively map our complex JPA entity to a database table?
-- etc.
+![bg left:33%](assets/generated/lab-2.jpg)
+
+# Lab 2
+
+## Sliced Testing: Working with a minimal Spring TestContext
 
 ---
 
-## Unit Testing a Controller
+## Unit Testing a Controller?
 
 ```java
 @ExtendWith(MockitoExtension.class)
@@ -70,6 +59,19 @@ class BookControllerUnitTest {
   // ...
 }
 ```
+  
+---
+
+## Unit Testing Has Limits
+
+- **Request Mapping**: Does `/api/books/{id}` actually resolve to your desired method?
+- **Validation**: Will incomplete request bodys result in a 400 bad request or return an accidental 200?
+- **Serialization**: Are your JSON objects serialized and deserialized correctly?
+- **Headers**: Are you setting Content-Type or custom headers correctly?
+- **Security**: Are your Spring Security configuration and other authorization checks enforced?
+- **Database**: Can we effectively map our complex JPA entity to a database table?
+- etc.
+
 
 ---
 
@@ -82,13 +84,38 @@ class BookControllerUnitTest {
 
 ---
 
-## A Typical Spring Application Context
+## Testing Types for Spring Boot Applications
 
-![w:600 center](assets/generated/spring-context.png)
+![height:300px center](assets/generated/starting-with-sliced-tests.png)
 
 ---
 
-![w:700 center](assets/generated/spring-sliced-context.png)
+
+## A Typical Spring `ApplicationContext`
+
+Our application context consists of many components (aka. Spring beans) from different types:
+
+![w:400 h:400 center](assets/generated/spring-context.png)
+
+---
+
+## We Can Slice It!
+
+![w:600 h:500 center](assets/generated/spring-sliced-context.png)
+
+---
+
+## Sliced Testing Spring Boot Applications 101
+
+- **Core Concept**: Test a specific "slice" or layer of your application by loading a minimal, relevant part of the Spring `ApplicationContext.
+
+- **Confidence Gained**: Helps validate parts of your application where pure unit testing is insufficient, like the web, messaging, or data layer.
+
+- **Prominent Examples:** Web layer (`@WebMvcTest`) and database layer (`@DataJpaTest`)
+
+- **Pitfalls**: Requires careful configuration to ensure only the necessary slice of the context is loaded.
+
+- **Tools**: JUnit, Mockito, Spring Test, Spring Boot, Testcontainers
 
 ---
 
@@ -115,7 +142,15 @@ class BookControllerTest {
 
 ---
 
-![center](assets/generated/slicing-annotations.png)
+
+## `@WebMvcTest` Under the Hood
+
+![](assets/generated/sliced-testing-explained.png)
+
+---
+
+## There's More Slices!
+![center h:500 w:700](assets/generated/slicing-annotations.png)
 
 ---
 
@@ -235,4 +270,4 @@ List<Book> searchBooksByTitleWithRanking(@Param("searchTerms") String searchTerm
 
 - Work with the same repository as in lab 1
 - Navigate to the `labs/lab-2` folder in the repository and complete the tasks as described in the `README` file of that folder
-- Time boxed until the end of the lunch break (14:00 AM)
+- Time boxed until the end of the lunch break (13:30 AM)

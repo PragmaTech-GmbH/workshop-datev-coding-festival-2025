@@ -3,7 +3,7 @@ marp: true
 theme: pragmatech
 ---
 
-![bg](./assets/barcelona-spring-io.jpg)
+![bg](./assets/nuremberg.jpg)
 
 ---
 
@@ -19,7 +19,7 @@ Question: Who is writing tests manually and who is enjoying it?
 
 ## Full-Day Workshop
 
-_Spring I/O Conference Workshop 21.05.2025_
+_DATEV Coding Festival 09.10.2025_
 
 Philip Riecks - [PragmaTech GmbH](https://pragmatech.digital/) - [@rieckpil](https://x.com/rieckpil)
 
@@ -34,29 +34,29 @@ Philip Riecks - [PragmaTech GmbH](https://pragmatech.digital/) - [@rieckpil](htt
 
 -->
 
-<!-- header: 'Testing Spring Boot Applications Demystified Workshop @ Spring I/O 21.05.2025' -->
+<!-- header: 'Testing Spring Boot Applications Demystified Workshop @ DATEV Coding Festival 09.10.2025' -->
 <!-- footer: '![w:32 h:32](assets/generated/logo.webp)' -->
 
 # Organization
 
-- Hotel WiFi: `Spring I/O` Password: `bootifulBCN`
-- Slides & Code will be shared: check PragmaTech GitHub
+- Slides & code will be shared: check [PragmaTech GitHub](https://github.com/PragmaTech-GmbH/workshop-datev-coding-festival-2025) in the linked resources within Zoom
 - Workshop lab requirements
-  - Java 21
-  - Docker
-  - GitHub Account (preferably a personal)
+  - Java JDK 21
+  - Docker for Testcontainers, consider Podman
+  - GitHub Account (preferably a personal) to use GitHub Codespaces if the local setup is not possible
 
 ---
 
 ### (Planned) Timeline
 
-- 9:00 - 10:45: **Lab 1 - Introduction and Spring Boot Testing Basics**  (105 minutes)
-- 10:45 - 11:05: **Coffee Break** (20 minutes)
-- 11:05 - 13:00: **Lab 2 - Sliced Testing** (115 minutes)
-- 13:00 - 14:00 **Lunch** (60 minutes)
-- 14:00 - 15:30: **Lab 3 - Integration Testing** (90 minutes)
-- 15:30 - 15:50 **Coffee Break** (20 minutes)
-- 15:50 - 17:00: **Lab 4 - Pitfalls, Best Practices, AI & Outlook** (70 minutes)
+- 9:00 - 10:30: **Lab 1 - Introduction and Spring Boot Testing Basics**  (90 minutes)
+- 10:30 - 11:00: **Coffee Break** (30 minutes)
+- 11:00 - 12:30: **Lab 2 - Sliced Testing** (90 minutes)
+- 12:30 - 13:30: **Lunch** (60 minutes)
+- 13:30 - 15:00: **Lab 3 - Integration Testing** (90 minutes)
+- 15:00 - 15:30: **Coffee Break** (30 minutes)
+- 15:30 - 16:30: **Lab 4 - Pitfalls, Best Practices, AI & Outlook** (60 minutes)
+- 16:30 - 17:00: **Final Q&A and Wrap-Up**
 
 ---
 ![bg right:33%](assets/generated/hza.jpg)
@@ -73,11 +73,8 @@ Philip Riecks - [PragmaTech GmbH](https://pragmatech.digital/) - [@rieckpil](htt
 
 ## Getting to Know Each Other
 
-- What's your name?
-- Where are you from?
-- What's your role?
-- How is automated testing handled in your team/company? 
-- Do you have any specific testing challenges? 
+- What's your name and your role?
+- What's one word that describes how you're feeling about automated testing?
 - What's your expectation for this workshop?
 
 ---
@@ -114,7 +111,7 @@ Notes:
 
 ---
 
-<!-- header: 'Testing Spring Boot Applications Demystified Workshop @ Spring I/O 21.05.2025' -->
+<!-- header: 'Testing Spring Boot Applications Demystified Workshop @ DATEV Coding Festival 09.10.2025' -->
 <!-- footer: '![w:32 h:32](assets/generated/logo.webp)' -->
 
 <!--
@@ -131,22 +128,30 @@ Notes:
 
 ### Getting Used To Testing At Work
 
-![](assets/generated/pr-reject.png)
+![width:900px center](assets/generated/pr-reject.png)
 
 ---
 
 # Goals of this Workshop
-
-- Demystify the complexities of testing Spring Boot applications
-- Provide clear explanations, practical insights, and actionable best practices
-- Become more productive and confident in your development and testing efforts
+1. Demystify the complexities of testing Spring Boot applications
+<br/>
+2. Provide clear explanations, practical insights, and actionable best practices
+   <br/>
+3. Become more productive and confident in your development and testing efforts
 
 ---
 
-<!-- _class: section -->
+![bg left:33%](assets/generated/northstar.jpg)
 
-# Spring Boot Testing Basics
-## Spring Boot Starter Test, Build Tools, Conventions, Unit Testing
+## My Overall Northstar
+
+Imagine seeing this pull request on a Friday afternoon:
+
+![](assets/generated/northstar-pr.png)
+
+How confident are you to merge this major Spring Boot upgrade and deploy it to production once the pipeline turns green?
+
+Good tests don't just catch bugs - they give you the confidence to say "yes" without hesitation.
 
 ---
 
@@ -158,6 +163,14 @@ Notes:
 - Documentation
 - Regression Prevention
 - Become more Productive
+- Use Tests as a Playground to Explore New Technologies
+
+---
+
+<!-- _class: section -->
+
+# Spring Boot Testing Basics
+## Spring Boot Starter Test, Build Tools, Conventions, Unit Testing
 
 ---
 
@@ -176,8 +189,16 @@ img[alt~="center"] {
 
 ### My Pragmatic Test Name Approach
 
+<br/>
+
 1. **Unit Tests**: Tests that verify the functionality of a single, isolated component (like a method or class) by mocking or stubbing all external dependencies.
+
+<br/>
+
 2. **Integration Tests**: Tests that verify interactions between two or more components work correctly together, with real implementations replacing some mocks.
+
+<br/>
+
 3. **E2E**: Tests that validate the entire application workflow from start to finish, simulating real user scenarios across all components and external dependencies.
 
 ---
@@ -230,9 +251,9 @@ Tips:
 -->
 
 ```shell
-[INFO] +- org.springframework.boot:spring-boot-starter-test:jar:3.4.5:test
-[INFO] |  +- org.springframework.boot:spring-boot-test:jar:3.4.5:test
-[INFO] |  +- org.springframework.boot:spring-boot-test-autoconfigure:jar:3.4.5:test
+[INFO] +- org.springframework.boot:spring-boot-starter-test:jar:3.5.6:test
+[INFO] |  +- org.springframework.boot:spring-boot-test:jar:3.5.6:test
+[INFO] |  +- org.springframework.boot:spring-boot-test-autoconfigure:jar:3.5.6:test
 [INFO] |  +- com.jayway.jsonpath:json-path:jar:2.9.0:test
 [INFO] |  +- jakarta.xml.bind:jakarta.xml.bind-api:jar:4.0.2:test
 [INFO] |  |  \- jakarta.activation:jakarta.activation-api:jar:2.1.3:test
@@ -347,7 +368,7 @@ void shouldProvideFluentAssertions() {
 ## Transitive Test Dependency: Hamcrest
 
 - Fluent assertion library
-- Occasionally used within Spring Test, e.g. MockMvc verifications
+- Occasionally used within Spring Test, e.g. `MockMvc` verifications
 - Implementation for many other programming languages
 
 ```java
@@ -456,6 +477,28 @@ void shouldCompareXmlDocuments() {
   assertFalse(diff.hasDifferences(), diff.toString());
 }
 ```
+
+---
+
+## Testing Types for Spring Boot Applications
+
+![height:300px center](assets/generated/starting-with-unit-tests.png)
+
+---
+
+
+## Unit Testing Spring Boot Applications 101
+
+- **Core Concept**: Test individual components (classes, methods) in complete isolation from their dependencies.
+
+- **Confidence Gained**: Provides logarithmic verifications, ensuring that the smallest parts of your code work as expected under various conditions.
+
+- **Best Practices**: Focus on a single unit of work.
+
+
+- **Pitfalls**: Requires a well-thought-out class design. Poor design can lead to testing overly complex "god classes," making tests difficult to write and maintain.
+
+- **Tools**: JUnit (or Spock, TestNG, etc.), Mockito and assertion libraries like AssertJ or Hamcrest.
 
 ---
 
@@ -653,9 +696,8 @@ public class TimingExtension implements BeforeTestExecutionCallback, AfterTestEx
 # Time For Some Exercises
 ## Lab 1
 
-- Set up the [repository](https://github.com/PragmaTech-GmbH/testing-spring-boot-applications-demystified-workshop) locally - https://github.com/PragmaTech-GmbH/testing-spring-boot-applications-demystified-workshop
-- Search "PragmaTech GitHub" and pick the first pinned repository
-- Work locally or use GitHub Codespaces (120 hours/month free)
-- Fore Codespaces, pick at least 4-Cores (16 GB RAM) and region `Europe West`
+- Check out the [repository](https://github.com/PragmaTech-GmbH/workshop-datev-coding-festival-2025) locally and open it at the project root inside your IDE
+- Work locally (requires Podman and Java 21) or use GitHub Codespaces (120 hours/month free)
+- For Codespaces, pick at least 4-Cores (16 GB RAM) and region `Europe West`
 - Navigate to the `labs/lab-1` folder in the repository and complete the tasks as described in the `README` file of that folder 
-- Time boxed until the end of the coffee break (11:05 AM)
+- Time boxed until the end of the coffee break (11:00 AM)

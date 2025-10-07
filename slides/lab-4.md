@@ -3,7 +3,7 @@ marp: true
 theme: pragmatech
 ---
 
-![bg](./assets/barcelona-spring-io.jpg)
+![bg](./assets/nuremberg.jpg)
 
 ---
 
@@ -21,13 +21,18 @@ img[alt~="center"] {
 
 ## Full-Day Workshop
 
-_Spring I/O Conference Workshop 21.05.2025_
+_DATEV Coding Festival 09.10.2025_
 
 Philip Riecks - [PragmaTech GmbH](https://pragmatech.digital/) - [@rieckpil](https://x.com/rieckpil)
 
+
+---
+
+## Discuss Exercises from Lab 3
+
 --- 
 
-<!-- header: 'Testing Spring Boot Applications Demystified Workshop @ Spring I/O 21.05.2025' -->
+<!-- header: 'Testing Spring Boot Applications Demystified Workshop @ DATEV Coding Festival 09.10.2025' -->
 <!-- footer: '![w:32 h:32](assets/generated/logo.webp)' -->
 
 ![bg left:33%](assets/generated/lab-4.jpg)
@@ -38,9 +43,6 @@ Philip Riecks - [PragmaTech GmbH](https://pragmatech.digital/) - [@rieckpil](htt
 
 ---
 
-## Discuss Exercises from Lab 3
-
----
 
 # Last Lab
 ## Spring Boot Testing Best Practices & Pitfalls
@@ -224,8 +226,12 @@ Notes:
 - Online Course: [Testing Spring Boot Applications Masterclass](https://rieckpil.de/testing-spring-boot-applications-masterclass/) (on-demand, 12 hours, 130+ modules)
 - eBook: [30 Testing Tools and Libraries Every Java Developer Must Know](https://leanpub.com/java-testing-toolbox)
 - eBook: [Stratospheric - From Zero to Production with AWS](https://leanpub.com/stratospheric)
-- Spring Boot [testing workshops](https://pragmatech.digital/workshops/) (in-house/remote/hybrid)
+- Further Spring Boot [testing workshops](https://pragmatech.digital/workshops/) (in-house/remote/hybrid)
 - [Consulting offerings](https://pragmatech.digital/consulting/), e.g. the Test Maturity Assessment
+
+---
+
+## Time for Q&A
 
 ---
 
@@ -235,7 +241,6 @@ Notes:
 
 - Request your certificate of completion via mail/LinkedIn
 - Share your feedback, e.g. you could share three highlights and three areas for improvement
-- Enjoy the next two days at Spring I/O
 - Joyful testing!
 
 **LinkedIn**: Philip Riecks

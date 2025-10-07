@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * 1. Create a SlowTestDetector extension class that implements the appropriate JUnit Jupiter interfaces
  * - The extension should measure the execution time of each test
  * - If a test takes longer than 100ms, it should print a warning to the console
- * - The extension should allow configuring the threshold via a parameter
+ * - (Optional: The extension should allow configuring the threshold via a parameter)
  * <p>
  * 2. Apply your extension to the test class or methods
  * <p>

@@ -6,6 +6,8 @@ import java.util.concurrent.TimeUnit;
 import io.netty.channel.ChannelOption;
 import io.netty.handler.timeout.ReadTimeoutHandler;
 import io.netty.handler.timeout.WriteTimeoutHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,11 +21,12 @@ import reactor.netty.http.client.HttpClient;
 
 @Configuration
 public class WebClientConfig {
+  private static final Logger LOG = LoggerFactory.getLogger(WebClientConfig.class);
 
   @Bean
   public WebClient openLibraryWebClient(
-    @Value("${book.metadata.api.url:https://openlibrary.org}") String baseUrl,
-    @Value("${book.metadata.api.timeout:5}") int timeoutSeconds) {
+    @Value("${book.metadata.api.base-url}") String baseUrl,
+    @Value("${book.metadata.api.timeout}") int timeoutSeconds) {
 
     HttpClient httpClient = HttpClient.create()
       .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, timeoutSeconds * 1000)
@@ -45,7 +48,7 @@ public class WebClientConfig {
 
   private ExchangeFilterFunction logRequest() {
     return ExchangeFilterFunction.ofRequestProcessor(clientRequest -> {
-      System.out.println("Request: " + clientRequest.method() + " " + clientRequest.url());
+      LOG.info("Request: {} - {}", clientRequest.method(), clientRequest.url());
       return Mono.just(clientRequest);
     });
   }

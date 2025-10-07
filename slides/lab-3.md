@@ -3,7 +3,7 @@ marp: true
 theme: pragmatech
 ---
 
-![bg](./assets/barcelona-spring-io.jpg)
+![bg](./assets/nuremberg.jpg)
 
 ---
 
@@ -21,7 +21,7 @@ img[alt~="center"] {
 
 ## Full-Day Workshop
 
-_Spring I/O Conference Workshop 21.05.2025_
+_DATEV Coding Festival 09.10.2025_
 
 Philip Riecks - [PragmaTech GmbH](https://pragmatech.digital/) - [@rieckpil](https://x.com/rieckpil)
 
@@ -31,12 +31,34 @@ Philip Riecks - [PragmaTech GmbH](https://pragmatech.digital/) - [@rieckpil](htt
 
 ---
 
+<!-- header: 'Testing Spring Boot Applications Demystified Workshop @ DATEV Coding Festival 09.10.2025' -->
+<!-- footer: '![w:32 h:32](assets/generated/logo.webp)' -->
 
 ![bg left:33%](assets/generated/lab-3.jpg)
 
 # Lab 3
 
-## Integration Testing
+## Integration Testing: Testing against a full Spring TestContext
+
+---
+
+## Full Context Testing Spring Boot Applications
+
+![height:300px center](assets/generated/starting-with-full-context-tests.png)
+
+---
+
+## Integration Testing Spring Boot Applications 101
+
+- **Core Concept**: Start the entire Spring application context, often on a random local port, and test the application through its external interfaces (e.g., REST API).
+
+- **Confidence Gained**: Validates the integration of all internal components working together as a complete application.
+
+- **Best Practices**: Use `@SpringBootTest` to run the app on a local port.
+
+- **Pitfalls**: Slower to run than unit or sliced tests. Managing the lifecycle of dependent services can be complex.
+
+- **Tools**: JUnit, Mockito, Spring Test, Spring Boot, Testcontainers, WireMock (for mocking external HTTP services), Selenium (for browser-based UI testing)
 
 ---
 
@@ -57,7 +79,18 @@ Notes:
 
 ## The Default Integration Test
 
-![](assets/generated/spring-boot-test-setup.png)
+Each new Spring Boot project comes with a default integration test:
+
+![w:700 h:300 center](assets/generated/spring-boot-test-setup.png)
+
+---
+
+## Main Challenges of Full Context Integration Tests
+
+- Starting the entire Spring context can be slow, repeated context starts will slow down the build
+- External infrastructure components (databases, message brokers, etc.) need to be provided
+- HTTP communication with other services needs to be stubbed both during startup and during runtime
+- Test data management (setup and cleanup) is crucial to ensure test reliability
 
 ---
 
@@ -65,20 +98,26 @@ Notes:
 
 - Provide external infrastructure with [Testcontainers](https://testcontainers.com/)
 - Start Tomcat with: `@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)`
-- Consider WireMock/MockServer for stubbing external HTTP services
-- Test controller endpoints via: `MockMvc`, `WebTestClient`, `TestRestTemplate`
+- Test controller endpoints via: `MockMvc` (no real HTTP communication), `WebTestClient` (real HTTP communication), `TestRestTemplate` (real HTTP communication)
+- Consider WireMock/MockServer for stubbing dependent HTTP services
 
 ---
 
 ## Introducing: Microservice HTTP Communication
 
+Our library application got a new feature. We now fetch book metadata from a [remote service](https://openlibrary.org/api/books?jscmd=data&format=json&bibkeys=9780132350884):
+
 ```java
-public BookMetadataResponse getBookByIsbn(String isbn) {
-  return webClient.get()
-    .uri("/isbn/{isbn}", isbn)
-    .retrieve()
-    .bodyToMono(BookMetadataResponse.class)
-    .block();
+webClient.get()
+  .uri(
+    "/api/books",
+    uriBuilder ->
+      uriBuilder
+        .queryParam("jscmd", "data")
+        .queryParam("format", "json")
+        .queryParam("bibkeys", isbn)
+        .build())
+  .retrieve();
 }
 ```
 
@@ -108,7 +147,8 @@ public BookMetadataResponse getBookByIsbn(String isbn) {
 
 ```java
 wireMockServer.stubFor(
-  get("/isbn/" + isbn)
+  get(urlPathEqualTo("/api/books/" + isbn))
+     // ... query param matchers
     .willReturn(aResponse()
       .withHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
       .withBodyFile(isbn + "-success.json"))
@@ -119,7 +159,9 @@ wireMockServer.stubFor(
 
 ## Making Our Application Context Start
 
-- Stubbing HTTP responses during the launch of our Spring Context
+Next challenge: Our application makes HTTP calls during startup to fetch some initial data.
+
+- We need to stub HTTP responses during the launch of our Spring Context
 - Introducing a new concept: `ContextInitializer`
 
 ```java
@@ -190,6 +232,16 @@ This goes into the cache key (`MergedContextConfiguration`):
 
 ---
 
+## Spring Test Profiler
+
+![center](assets/spring-test-profiler-logo.png)
+
+A Spring Test utility that provides visualization and insights for Spring Test execution, with a focus on Spring context caching statistics. 
+
+**Overall goal**: Identify optimization opportunities in your Spring Test suite to speed up your builds and ship to production faster and with more confidence.
+
+---
+
 ## Spot the Issues for Context Caching
 
 ![](assets/context-caching-bad.png)
@@ -223,4 +275,4 @@ Common problems that break caching:
 
 - Work with the same repository as in lab 1/lab 2
 - Navigate to the `labs/lab-3` folder in the repository and complete the tasks as described in the `README` file of that folder
-- Time boxed until the end of the coffee break (15:50 AM)
+- Time boxed until the end of the coffee break (15:30 AM)

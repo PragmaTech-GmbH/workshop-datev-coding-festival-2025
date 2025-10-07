@@ -22,6 +22,7 @@ class SampleIT {
     .withDatabaseName("testdb")
     .withUsername("test")
     .withPassword("test");
+
   @Autowired
   private ObjectMapper objectMapper;
 

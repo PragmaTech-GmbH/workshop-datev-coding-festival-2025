@@ -39,7 +39,7 @@ public class WireMockContextInitializer implements ApplicationContextInitializer
 
     // Set the WebClient base URL property to point to our WireMock server
     TestPropertyValues.of(
-      "book.metadata.api.url=http://localhost:" + wireMockServer.port()
+      "book.metadata.api.base-url=http://localhost:" + wireMockServer.port()
     ).applyTo(applicationContext);
 
     logger.info("WireMock initialized on port {}", wireMockServer.port());

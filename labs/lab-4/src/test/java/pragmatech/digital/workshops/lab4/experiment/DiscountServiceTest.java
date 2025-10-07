@@ -42,19 +42,6 @@ class DiscountServiceTest {
   }
 
   @Test
-  @DisplayName("Medium-aged books (6 months to 2 years) should get 10% discount")
-  void shouldApply10PercentDiscountToMediumAgedBooks() {
-    // Arrange
-    book.setPublishedDate(LocalDate.now().minusMonths(12));
-
-    // Act
-    int discount = cut.calculateDiscount(book);
-
-    // Assert
-    assertThat(discount).isEqualTo(10);
-  }
-
-  @Test
   @DisplayName("Older books (2-5 years) should get 25% discount")
   void shouldApply25PercentDiscountToOlderBooks() {
     // Arrange
@@ -78,19 +65,5 @@ class DiscountServiceTest {
 
     // Assert
     assertThat(discount).isEqualTo(50);
-  }
-
-  @Test
-  @DisplayName("Unavailable books should get no discount regardless of age")
-  void shouldApplyNoDiscountToUnavailableBooks() {
-    // Arrange
-    book.setPublishedDate(LocalDate.now().minusYears(10)); // Very old but unavailable
-    book.setStatus(BookStatus.BORROWED);
-
-    // Act
-    int discount = cut.calculateDiscount(book);
-
-    // Assert
-    assertThat(discount).isEqualTo(0);
   }
 }
