@@ -17,8 +17,8 @@
 
 ## PIT & JaCoCo
 
-- Get the PIT report: `./mvnw test-compile  pitest:mutationCoverage`
-- Get the JaCoCo report: `./mvnw package`
+- Get the PIT report: `./mvnw test-compile  pitest:mutationCoverage`, then visit `target/pit-reports/index.html`
+- Get the JaCoCo report: `./mvnw package`, then visit `target/site/jacoco/index.html`
 
 ## Claude Code
 
