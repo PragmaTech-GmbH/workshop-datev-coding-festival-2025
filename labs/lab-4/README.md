@@ -11,7 +11,7 @@
 
 ## Test Parallelization
 
-- Active JVMs: `watch -n 1 'jps -l | grep surefire'`
+- Active JVMs: `watch -n 1 'jps -l | sort -n'` or only Surefire `watch -n 1 'jps -l | grep surefire'`
 - Active threads per JVM: `watch -n 1 'PID=$(jps -l | grep surefire | awk "{print \$1}"); if [ -n "$PID" ]; then jstack $PID | awk "/^\".*\"/ {name=\$0} /java.lang.Thread.State/ {print name, \$2}" | column -t; else echo "No surefire JVM found"; fi'`
 - JUnit docs on test parallelization: https://docs.junit.org/snapshot/user-guide/#writing-tests-parallel-execution
 
