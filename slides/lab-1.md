@@ -74,7 +74,7 @@ Philip Riecks - [PragmaTech GmbH](https://pragmatech.digital/) - [@rieckpil](htt
 ## Getting to Know Each Other
 
 - What's your name and your role?
-- What's one word that describes how you're feeling about automated testing?
+- What's 1-3 words that describes how you're feeling about automated testing?
 - What's your expectation for this workshop?
 
 ---
